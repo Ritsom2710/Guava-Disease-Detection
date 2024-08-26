@@ -1,0 +1,66 @@
+Microsoft Windows [Version 10.0.19045.4780]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\panch>cd
+C:\Users\panch
+
+C:\Users\panch>cd C:\Users\panch\Desktop
+
+C:\Users\panch\Desktop>python guava_disease_detection.py
+2024-08-24 15:45:07.606313: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2024-08-24 15:45:09.734164: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+Found 1377 images belonging to 5 classes.
+Found 465 images belonging to 5 classes.
+C:\Users\panch\AppData\Local\Programs\Python\Python312\Lib\site-packages\keras\src\layers\convolutional\base_conv.py:107: UserWarning: Do not pass an `input_shape`/`input_dim` argument to a layer. When using Sequential models, prefer using an `Input(shape)` object as the first layer in the model instead.
+  super().__init__(activity_regularizer=activity_regularizer, **kwargs)
+2024-08-24 15:45:18.776646: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+Epoch 1/10
+C:\Users\panch\AppData\Local\Programs\Python\Python312\Lib\site-packages\keras\src\trainers\data_adapters\py_dataset_adapter.py:122: UserWarning: Your `PyDataset` class should call `super().__init__(**kwargs)` in its constructor. `**kwargs` can include `workers`, `use_multiprocessing`, `max_queue_size`. Do not pass these arguments to `fit()`, as they will be ignored.
+  self._warn_if_super_not_called()
+2024-08-24 15:45:39.377346: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:450] ShuffleDatasetV3:2: Filling up shuffle buffer (this may take a while): 3 of 8
+2024-08-24 15:45:50.534620: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:450] ShuffleDatasetV3:2: Filling up shuffle buffer (this may take a while): 6 of 8
+2024-08-24 15:45:57.156529: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:480] Shuffle buffer filled.
+←[1m43/43←[0m ←[32m━━━━━━━━━━━━━━━━━━━━←[0m←[37m←[0m ←[1m236s←[0m 5s/step - accuracy: 0.4974 - loss: 1.4663 - val_accuracy: 0.6473 - val_loss: 0.8580
+Epoch 2/10
+←[1m 1/43←[0m ←[37m━━━━━━━━━━━━━━━━━━━━←[0m ←[1m31s←[0m 754ms/step - accuracy: 0.6562 - loss: 0.95262024-08-24 15:49:24.301914: I tensorflow/core/framework/local_rendezvous.cc:404] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+         [[{{node IteratorGetNext}}]]
+C:\Users\panch\AppData\Local\Programs\Python\Python312\Lib\contextlib.py:155: UserWarning: Your input ran out of data; interrupting training. Make sure that your dataset or generator can generate at least `steps_per_epoch * epochs` batches. You may need to use the `.repeat()` function when building your dataset.
+  self.gen.throw(value)
+2024-08-24 15:49:26.026188: I tensorflow/core/framework/local_rendezvous.cc:404] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+         [[{{node IteratorGetNext}}]]
+←[1m43/43←[0m ←[32m━━━━━━━━━━━━━━━━━━━━←[0m←[37m←[0m ←[1m2s←[0m 42ms/step - accuracy: 0.6562 - loss: 0.9526 - val_accuracy: 0.6471 - val_loss: 0.9060
+Epoch 3/10
+2024-08-24 15:49:36.801697: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:450] ShuffleDatasetV3:2: Filling up shuffle buffer (this may take a while): 3 of 8
+2024-08-24 15:49:53.735059: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:480] Shuffle buffer filled.
+←[1m43/43←[0m ←[32m━━━━━━━━━━━━━━━━━━━━←[0m←[37m←[0m ←[1m228s←[0m 5s/step - accuracy: 0.6688 - loss: 0.8270 - val_accuracy: 0.6585 - val_loss: 1.1115
+Epoch 4/10
+←[1m 1/43←[0m ←[37m━━━━━━━━━━━━━━━━━━━━←[0m ←[1m35s←[0m 854ms/step - accuracy: 0.7188 - loss: 0.91522024-08-24 15:53:16.025612: I tensorflow/core/framework/local_rendezvous.cc:404] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+         [[{{node IteratorGetNext}}]]
+←[1m43/43←[0m ←[32m━━━━━━━━━━━━━━━━━━━━←[0m←[37m←[0m ←[1m2s←[0m 39ms/step - accuracy: 0.7188 - loss: 0.9152 - val_accuracy: 0.7647 - val_loss: 0.6800
+Epoch 5/10
+2024-08-24 15:53:26.426697: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:450] ShuffleDatasetV3:2: Filling up shuffle buffer (this may take a while): 4 of 8
+2024-08-24 15:53:38.382616: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:450] ShuffleDatasetV3:2: Filling up shuffle buffer (this may take a while): 7 of 8
+2024-08-24 15:53:42.679652: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:480] Shuffle buffer filled.
+←[1m43/43←[0m ←[32m━━━━━━━━━━━━━━━━━━━━←[0m←[37m←[0m ←[1m236s←[0m 5s/step - accuracy: 0.7178 - loss: 0.8008 - val_accuracy: 0.7746 - val_loss: 0.6370
+Epoch 6/10
+←[1m43/43←[0m ←[32m━━━━━━━━━━━━━━━━━━━━←[0m←[37m←[0m ←[1m2s←[0m 35ms/step - accuracy: 0.8125 - loss: 0.6387 - val_accuracy: 0.6471 - val_loss: 0.9087
+Epoch 7/10
+2024-08-24 15:57:26.144128: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:450] ShuffleDatasetV3:2: Filling up shuffle buffer (this may take a while): 3 of 8
+2024-08-24 15:57:45.965149: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:480] Shuffle buffer filled.
+←[1m43/43←[0m ←[32m━━━━━━━━━━━━━━━━━━━━←[0m←[37m←[0m ←[1m229s←[0m 5s/step - accuracy: 0.7411 - loss: 0.7334 - val_accuracy: 0.7188 - val_loss: 0.6410
+Epoch 8/10
+←[1m 1/43←[0m ←[37m━━━━━━━━━━━━━━━━━━━━←[0m ←[1m33s←[0m 786ms/step - accuracy: 0.7812 - loss: 0.77182024-08-24 16:01:05.276463: I tensorflow/core/framework/local_rendezvous.cc:404] Local rendezvous is aborting with status: OUT_OF_RANGE: End of sequence
+         [[{{node IteratorGetNext}}]]
+←[1m43/43←[0m ←[32m━━━━━━━━━━━━━━━━━━━━←[0m←[37m←[0m ←[1m2s←[0m 31ms/step - accuracy: 0.7812 - loss: 0.7718 - val_accuracy: 0.7647 - val_loss: 0.6104
+Epoch 9/10
+2024-08-24 16:01:15.814511: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:450] ShuffleDatasetV3:2: Filling up shuffle buffer (this may take a while): 3 of 8
+2024-08-24 16:01:26.206044: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:450] ShuffleDatasetV3:2: Filling up shuffle buffer (this may take a while): 6 of 8
+2024-08-24 16:01:32.520481: I tensorflow/core/kernels/data/shuffle_dataset_op.cc:480] Shuffle buffer filled.
+←[1m43/43←[0m ←[32m━━━━━━━━━━━━━━━━━━━━←[0m←[37m←[0m ←[1m225s←[0m 5s/step - accuracy: 0.7457 - loss: 0.6871 - val_accuracy: 0.7232 - val_loss: 0.6305
+Epoch 10/10
+←[1m43/43←[0m ←[32m━━━━━━━━━━━━━━━━━━━━←[0m←[37m←[0m ←[1m2s←[0m 33ms/step - accuracy: 0.8125 - loss: 0.4887 - val_accuracy: 0.8235 - val_loss: 0.5476
+←[1m15/15←[0m ←[32m━━━━━━━━━━━━━━━━━━━━←[0m←[37m←[0m ←[1m49s←[0m 3s/step - accuracy: 0.7493 - loss: 0.6714
+Test accuracy: 0.71
+
+C:\Users\panch\Desktop>^P

@@ -1,0 +1,65 @@
+# Import necessary libraries
+import tensorflow as tf
+from tensorflow import keras
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+from sklearn.preprocessing import ImageDataGenerator
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Set dataset paths
+train_dir = "C:/Users/panch/Desktop/guava3/train"
+test_dir = "C:/Users/panch/Desktop/guava3/test"
+val_dir = "C:/Users/panch/Desktop/guava3/val"
+
+# Define image data generators
+train_datagen = ImageDataGenerator(rescale=1./255)
+test_datagen = ImageDataGenerator(rescale=1./255)
+val_datagen = ImageDataGenerator(rescale=1./255)
+
+train_generator = train_datagen.flow_from_directory(
+    train_dir,
+    target_size=(224, 224),
+    batch_size=32,
+    class_mode='categorical'
+)
+
+test_generator = test_datagen.flow_from_directory(
+    test_dir,
+    target_size=(224, 224),
+    batch_size=32,
+    class_mode='categorical'
+)
+
+val_generator = val_datagen.flow_from_directory(
+    val_dir,
+    target_size=(224, 224),
+    batch_size=32,
+    class_mode='categorical'
+)
+
+# Define DenseNet model
+densenet_model = keras.applications.DenseNet201(
+    include_top=True,
+    weights='imagenet',
+    input_shape=(224, 224, 3),
+    classes=5
+)
+
+# Compile the model
+densenet_model.compile(
+    optimizer='adam',
+    loss='categorical_crossentropy',
+    metrics=['accuracy']
+)
+
+# Train the model
+history = densenet_model.fit(
+    train_generator,
+    epochs=10,
+    validation_data=val_generator
+)
+
+# Evaluate the model
+test_loss, test_acc = densenet_model.evaluate(test_generator)
+print(f'Test accuracy: {test_acc:.2f}')plt
